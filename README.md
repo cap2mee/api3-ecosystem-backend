@@ -12,9 +12,9 @@ Node server for API3 ecosystem platform
 
 > | name      |  type     | data type               | description                                                           |
 > |-----------|-----------|-------------------------|-----------------------------------------------------------------------|
-> | categories      |  optional | string   | project category  |
-> | chain      |  optional | number   | Chain Id of projects  |
-> | productType      |  optional | string   | Product type of projects, example: Data Feed, Automation, Node etc  |
+> | categories      |  optional | [string]   | param to filter projects with list of categories, since a project can belong multiple categories  |
+> | chains      |  optional | [number]   | filter with chains  |
+> | productTypes      |  optional | [string]   | filter with project types , example: Data Feed, Automation, Node etc  |
 > | year      |  optional | string   | Project release year  |
 
 
