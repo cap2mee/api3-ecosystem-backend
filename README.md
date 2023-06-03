@@ -3,6 +3,29 @@ Node server for API3 ecosystem platform
 
 ### API documentation
 
+
+ #### Get ecosystem statistics
+
+<details>
+ <summary><code>GET</code> <code><b>/project-stats</b></code> <code>(get current ecosystem stats: total projects, projects in each category, chain and product types)</code></summary>
+
+##### Parameters
+
+>  None      
+
+
+
+##### Responses
+
+> | http code     | content-type                      | response                                                            |
+> |---------------|-----------------------------------|---------------------------------------------------------------------|
+> | `200`         | `application/json`        | `  [ { totalProjects:1200, categories: [{id:'1', name:"Defi", count:50}, {id:2, name:"Dao", count:100}],chains: [{id:1 name:"Ethereum", chainId:1 count:50}, {id:2, name:"Polygon", chainId:137, count:100}] }, productTypes: [{ id:1, name:"Automaton", count:50}, {id:2, name:"VRF", count:100}],  years: [{ id:1, name:"2019", count:50}, {id:2, name:"2020", count:100}] ]`                                |
+> | `400`         | `application/json`                | `{"code":"400","message":"Bad Request"}`                            |
+> | `401`         | `text/html;charset=utf-8`         | Unauthorized                                                                |
+> | `500`         | `text/html;charset=utf-8`         | Server error                                                                |
+ </details>
+ 
+ 
 #### Get project list with filters
 
 <details>
@@ -26,3 +49,4 @@ Node server for API3 ecosystem platform
 > | `400`         | `application/json`                | `{"code":"400","message":"Bad Request"}`                            |
 > | `401`         | `text/html;charset=utf-8`         | Unauthorized                                                                |
 > | `500`         | `text/html;charset=utf-8`         | Server error                                                                |
+</details>
