@@ -29,7 +29,7 @@ Node server for API3 ecosystem platform
 #### Get project list with filters
 
 <details>
- <summary><code>GET</code> <code><b>/projects/:page</b></code> <code>(get list of projects with filters)</code></summary>
+ <summary><code>GET</code> <code><b>/projects/{page_number}</b></code> <code>(get list of projects with filters)</code></summary>
 
 ##### Parameters
 
