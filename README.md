@@ -29,12 +29,13 @@ Node server for API3 ecosystem platform
 #### Get project list with filters
 
 <details>
- <summary><code>GET</code> <code><b>/projects/{page_number}</b></code> <code>(get list of projects with filters)</code></summary>
+ <summary><code>GET</code> <code><b>/projects</b></code> <code>(get list of projects with filters)</code></summary>
 
 ##### Parameters
 
 > | name      |  type     | data type               | description                                                           |
 > |-----------|-----------|-------------------------|-----------------------------------------------------------------------|
+ > | page      |  optional | number   | page number to paginate list of projects  |
 > | categories      |  optional | [string]   | param to filter projects with list of categories, since a project can belong multiple categories  |
 > | chains      |  optional | [number]   | filter with chains  |
 > | productTypes      |  optional | [string]   | filter with project types , example: Data Feed, Automation, Node etc  |
@@ -45,7 +46,28 @@ Node server for API3 ecosystem platform
 
 > | http code     | content-type                      | response                                                            |
 > |---------------|-----------------------------------|---------------------------------------------------------------------|
-> | `200`         | `application/json`        | `  [ { id:'1', name:'Avegotchi', description:"Ultimate gamified defi experience", about:"Yield Protocol utilizing Delta Neutral Strategy Vaults. Delivering risk-hedged, sustainable investment strategies easily     accessible for anyone, anywhere", logo:"url", categories:["Defi", "Dao"], productType:["Vrf", "Automation"],  live:true, approved: true,  chains: [{id:1, name:"Ethereum"}, {id:137, name:"Polygon"}], year:"2023", releaseDate:"02-01-2023", socials: [{ name:'Twitter', url:""}, {name:"Telegram", url:""} ], website:"url", doc:"url", appLink:""   } ]`                                |
+> | `200`         | `application/json`        | `  [ { id:'1', name:'Avegotchi', description:"Ultimate gamified defi experience", logo:"url", categories:["Defi", "Dao"], productType:["Vrf", "Automation"],  live:true, approved: true,  chains: [{id:1, name:"Ethereum"}, {id:137, name:"Polygon"}], year:"2023", releaseDate:"02-01-2023"} ]`                                |
+> | `400`         | `application/json`                | `{"code":"400","message":"Bad Request"}`                            |
+> | `401`         | `text/html;charset=utf-8`         | Unauthorized                                                                |
+> | `500`         | `text/html;charset=utf-8`         | Server error                                                                |
+</details>
+
+
+#### Get project by id
+
+<details>
+ <summary><code>GET</code> <code><b>/projects/{project_id}</b></code> <code>(get project detail by id)</code></summary>
+
+##### Parameters
+ 
+> None
+
+
+##### Responses
+
+> | http code     | content-type                      | response                                                            |
+> |---------------|-----------------------------------|---------------------------------------------------------------------|
+> | `200`         | `application/json`        | `  { id:'1', name:'Avegotchi', description:"Ultimate gamified defi experience", about:"Yield Protocol utilizing Delta Neutral Strategy Vaults. Delivering risk-hedged, sustainable investment strategies easily     accessible for anyone, anywhere", logo:"url", categories:["Defi", "Dao"], productType:["Vrf", "Automation"],  live:true, approved: true,  chains: [{id:1, name:"Ethereum"}, {id:137, name:"Polygon"}], year:"2023", releaseDate:"02-01-2023", socials: [{ name:'Twitter', url:""}, {name:"Telegram", url:""} ], website:"url", doc:"url", appLink:""   }`                                |
 > | `400`         | `application/json`                | `{"code":"400","message":"Bad Request"}`                            |
 > | `401`         | `text/html;charset=utf-8`         | Unauthorized                                                                |
 > | `500`         | `text/html;charset=utf-8`         | Server error                                                                |
